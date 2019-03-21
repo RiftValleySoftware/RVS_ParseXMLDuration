@@ -35,7 +35,7 @@ public extension String {
     /* ################################################################## */
     /**
      */
-    var asXMLDuration: DateComponents {
+    var asXMLDuration: DateComponents! {
         /* ############################################################## */
         /**
          */
@@ -47,7 +47,7 @@ public extension String {
                 let separators = CharacterSet(charactersIn: "YMDHMS")
                 let scanner = Scanner(string: parseTarget)
                 scanner.charactersToBeSkipped = numbers.union(separators).inverted
-                
+                ret = DateComponents()
                 while !scanner.isAtEnd {
                     var value: NSString?
                     var typeIndicator: NSString?
@@ -55,11 +55,8 @@ public extension String {
                     scanner.scanCharacters(from: numbers, into: &value)
                     scanner.scanCharacters(from: separators, into: &typeIndicator)
                     
-                    if let value = value as String?, let doubleVal = Double(value), let typeIndicator = typeIndicator as String? {
-                        if nil == ret {
-                            ret = DateComponents()
-                        }
-                        switch typeIndicator {
+                    if let value = value as String?, let doubleVal = Double(value) {
+                        switch typeIndicator as String? {
                         case "Y":
                             ret.year = Int(doubleVal)
                         case "M":
@@ -74,8 +71,10 @@ public extension String {
                             ret.hour = Int(doubleVal)
                         case "S":
                             ret.second = Int(doubleVal)
-                            ret.nanosecond = Int((doubleVal - Double(Int(doubleVal))) * 1000000000)
-                            break
+                            let nanosecond = Int((doubleVal - Double(Int(doubleVal))) * 1000000000)
+                            if 0 < nanosecond {
+                                ret.nanosecond = nanosecond
+                            }
                             
                         default:
                             break
@@ -84,39 +83,21 @@ public extension String {
                 }
             }
             
-            return ret
+            return ret.isValidDate ? ret : nil
         }
         
         let timeDate = self.components(separatedBy: "T")
-        var dateString: String!
-        var timeString: String!
+        let dateString = "P" != timeDate[0] ? String(timeDate[0].dropFirst()) : nil
+        let timeString = ((1 < timeDate.count) && !timeDate[1].isEmpty) ? timeDate[1] : nil
         
-        if 1 < timeDate.count {
-            if "P" != timeDate[0] {
-                dateString = String(timeDate[0].dropFirst())
-            }
-            
-            if !timeDate[1].isEmpty {
-                timeString = timeDate[1]
-            }
-        } else {
-            if "P" != timeDate[0] {
-                dateString = String(timeDate[0].dropFirst())
-            }
-        }
-        
-        var returnValue: DateComponents!
-        
-        if let dateComp = scanString(dateString) {
-            returnValue = dateComp
-        }
-        
+        var returnValue = scanString(dateString)
+
         if let timeComp = scanString(timeString) {
             if nil != returnValue {
-                returnValue.hour = timeComp.hour
-                returnValue.minute = timeComp.minute
-                returnValue.second = timeComp.second
-                returnValue.nanosecond = timeComp.nanosecond
+                returnValue?.hour = timeComp.hour
+                returnValue?.minute = timeComp.minute
+                returnValue?.second = timeComp.second
+                returnValue?.nanosecond = timeComp.nanosecond
             } else {
                 returnValue = timeComp
             }
