@@ -43,45 +43,46 @@ public extension String {
             var ret: DateComponents!
             
             if let parseTarget = inString {
-                let numbers = CharacterSet.decimalDigits.union(CharacterSet(charactersIn: "."))
-                let separators = CharacterSet(charactersIn: "YMDHMS")
-                let scanner = Scanner(string: parseTarget)
-                scanner.charactersToBeSkipped = numbers.union(separators).inverted
-                ret = DateComponents()
-                while !scanner.isAtEnd {
-                    var value: NSString?
-                    var typeIndicator: NSString?
+                let numbers = CharacterSet.decimalDigits.union(CharacterSet(charactersIn: ".")) // Numbers and a decimal point.
+                let valueIndicators = CharacterSet(charactersIn: "YMDHS")   // These are the value indicators (years, months/minutes, days, hours, seconds)
+                let scanner = Scanner(string: parseTarget)  // Set up a scanner, with the string supplied.
+                scanner.charactersToBeSkipped = numbers.union(valueIndicators).inverted  // Ignore everything but what we give you.
+                ret = DateComponents()              // This is what we'll return (unless there's an error).
+                while !scanner.isAtEnd {            // Keep going until the end.
+                    var value: NSString?            // The numerical value that will be scanned. We use NSString for the scanner.
+                    var typeIndicator: NSString?    // This is the value indicator.
                     
-                    scanner.scanCharacters(from: numbers, into: &value)
-                    scanner.scanCharacters(from: separators, into: &typeIndicator)
+                    scanner.scanCharacters(from: numbers, into: &value)                 // Grab the numerical part first.
+                    scanner.scanCharacters(from: valueIndicators, into: &typeIndicator) // Followed by the value indicator.
                     
+                    // Quick validation and unwrapping.
                     if let value = value as String?, let doubleVal = Double(value), let typeIndicator = typeIndicator as String? {
-                        if floor(doubleVal) != doubleVal && "S" != typeIndicator {
+                        if floor(doubleVal) != doubleVal && "S" != typeIndicator {  // Only seconds can have a decimal value.
                             return nil
                         }
-                        let multiplier: Double = isNegative ? -1 : 1
-                        switch typeIndicator {
-                        case "Y":
+                        let multiplier: Double = isNegative ? -1 : 1    // This is used to make values negative. We parse an absval.
+                        switch typeIndicator {  // Which components are set depends upon which value indicator we got.
+                        case "Y":   // Years
                             ret.year = Int(doubleVal * multiplier)
-                        case "M":
-                           if isDate {
+                        case "M":   // Months or Minutes
+                           if isDate {  // Which one depends on whether this is a date or a time.
                                 ret.month = Int(doubleVal * multiplier)
                             } else {
                                 ret.minute = Int(doubleVal * multiplier)
                             }
-                        case "D":
+                        case "D":   // Days
                             ret.day = Int(doubleVal * multiplier)
-                        case "H":
+                        case "H":   // Hours
                             ret.hour = Int(doubleVal * multiplier)
-                        case "S":
+                        case "S":   // Seconds and Nanoseconds. Fractions of seconds will result in a second property of zero.
                             ret.second = Int(doubleVal * multiplier)
-                            let nanosecond = (doubleVal - Double(Int(doubleVal))) * 1000000000
-                            if 0 < nanosecond {
+                            let nanosecond = (doubleVal - floor(doubleVal)) * 1000000000  // The fractional part of the value.
+                            if 0 < nanosecond { // We only supply a nanosecond value if we actually have a fractional part.
                                 ret.nanosecond = Int(nanosecond * multiplier)
                             }
                             
-                        default:
-                            break
+                        default:    // Nothing else is allowed.
+                            return nil
                         }
                     } else {
                         return nil
