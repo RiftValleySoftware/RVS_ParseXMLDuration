@@ -34,10 +34,22 @@ import Foundation
 public extension String {
     /* ################################################################## */
     /**
+     This calculated property will examine the String, and will parse it for xsd:duration.
+     
+     If it can successfully parse the String as a properly-formatted duration, then it will return a DateComponents instance, with the duration therein.
+     
+     - returns: An instance of DateComponents, set to the duration. Nil, if the parse failed for any reason.
      */
     var asXMLDuration: DateComponents! {
         /* ############################################################## */
         /**
+         This is an embedded scanner routine that scans a provided String for xsd:duration values, and returns a DateComponents instance.
+         
+         - parameter inString: The String segment to be parsed. It can be nil, in which case nil is returned.
+         - parameter isNegative: An optional Bool (default is false). True, if the duration is marked as negative.
+         - parameter isDate: An optional Bool (default is false). True, if this String is the first part (the Date section).
+         
+         - returns: An instance of DateComponents, set to the duration. Nil, if the parse failed for any reason.
          */
         func _asXMLDurationScanString(_ inString: String!, isNegative: Bool = false, isDate: Bool = false) -> DateComponents! {
             var ret: DateComponents!
@@ -98,29 +110,34 @@ public extension String {
             return ret
         }
 
-        var target = self
+        // Start of Execution
+        
+        var target = self   // We make a copy, because we will be removing the first character.
         let isNegative = "-" == target.first
         if isNegative {
             target.removeFirst()
         }
         
+        // Separate the date section from the time section.
         let timeDate = target.uppercased().components(separatedBy: "T")
-        if 0 < timeDate.count,
-            !(1 < timeDate.count && timeDate[1].isEmpty),
-            "P" == timeDate[0].prefix(1),
-            "P-" != timeDate[0].prefix(2) {
-            let dateString = "P" != timeDate[0] ? String(timeDate[0].dropFirst()) : nil
-            let timeString = ((1 < timeDate.count) && !timeDate[1].isEmpty) ? timeDate[1] : nil
+        if 0 < timeDate.count,  // Do we have at least one substring?
+            !(1 < timeDate.count && timeDate[1].isEmpty),   // Make sure that we don't have an empty time (trailing "T," which is illegal).
+            "P" == timeDate[0].prefix(1),   // Always begin with a "P".
+            "P-" != timeDate[0].prefix(2) { // We specifically check to make sure that we don't have a minus after the "P".
+            let dateString = String(timeDate[0].dropFirst())    // Drop the "P". It's possible for this String to be empty, after that.
+            let timeString = (1 < timeDate.count) ? timeDate[1] : nil   // See if we have a second (Time) string.
             
+            // First, we check for a date.
             var returnValue = _asXMLDurationScanString(dateString, isNegative: isNegative, isDate: true)
 
+            // Next, we check for a time.
             if let timeComp = _asXMLDurationScanString(timeString, isNegative: isNegative) {
-                if nil != returnValue {
+                if nil != returnValue { // If we already had a date, then we simply add the time components.
                     returnValue?.hour = timeComp.hour
                     returnValue?.minute = timeComp.minute
                     returnValue?.second = timeComp.second
                     returnValue?.nanosecond = timeComp.nanosecond
-                } else {
+                } else {    // Otherwise, we are the response.
                     returnValue = timeComp
                 }
             }
@@ -141,6 +158,9 @@ public extension String {
 public extension DateComponents {
     /* ################################################################## */
     /**
+     This calculated property will return a properly-formatted xsd:duration String, based upon the current state of this DateComponents instance.
+     
+     - returns: A String, if the parse was successful. Nil, if not.
      */
     var asXMLDuration: String! {
         // First, extract all of the components we're interested in. We either have a value, or 0.
