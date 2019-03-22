@@ -46,10 +46,56 @@ The String variant will return an optional DateComponents result (a parsed strin
 
 All the rest of the stuff is for testing, validating and sharing.
 
+A Few Rules:
+-
+
+The string is formatted as `[-]P[0-9Y][0-9M][0-9D][T[0-9H][0-9M][0-9[.0-9]S]]`
+
+The first character **MUST** be a `"P"`, and any negative sign must **PRECEDE** the `"P"`.
+
+Any time (hours, minutes, seconds), **MUST** be preceded by a `"T"`. This either starts the time, or separates it from a date.
+
+For example, `P2Y6M5DT12H35M30S` is 2 years, 6 months, 5 days, 12 hours, 35 minutes and 30 seconds.
+
+For our purposes, when a unit is not specified, we don't include it at all in the DateComponents. If the unit is specified, but is a zero (0), then we specify that unit as zero in the DateComponents.
+
+Examples
+-
+
+Not much to show, really. The parser is ridiculously easy to use.
+
+**Parsing From A String:**
+
+Each part is composed of 1 or more decimal digits, immediately succeeded by "Y" (years), "M" (months or minutes), "D" (days), "H" (hours), or "S" (seconds). Seconds can be expressed as a decimal. All other numbers are integers.
+
+    let durationComponents1 = "P2Y6M5DT12H35M30.123S".asXMLDuration // DateComponents(year: 2, month: 6, day: 5, hour: 12, minute: 35, second: 30, nanosecond: 1230000000)
+    
+You can have more than 59 minutes or 23 hours.
+
+    let durationComponents2 = "PT168H120M".asXMLDuration            // DateComponents(hour: 168, minute: 120)
+    
+In order to have a negative duration, the first character must be a minus sign, and ALL components in the result will be negative.
+
+    let durationComponents3 = "-P2M4DT10M5.23S".asXMLDuration       // DateComponents(month: -2, day: -4, minute: -10, second: -5, nanosecond: -2300000000)
+
+**Delivering A String From A DateComponents Instance:**
+
+Zero (or unspecified) components are not included in the resultant String.
+
+    let durationString1 = DateComponents(year: 0, day: 1, hour: 1, minute: 0, second: 1, nanosecond: 0).asXMLDuration // "PT1H1S"
+
+Note that fractional seconds are expressed as seconds and nanoseconds.
+
+    let durationString2 = DateComponents(year: 1, month: 1, day: 1, hour: 1, minute: 1, second: 1, nanosecond: 1000000000).asXMLDuration // "P1Y1M1DT1H1M1.1S"
+
+In order to specify a negative duration, ALL components must be negative.
+
+    let durationString3 = DateComponents(year: -1, month: -1, day: -1, hour: -1, minute: -1, second: -1, nanosecond: -1000000000).asXMLDuration // "-P1Y1M1DT1H1M1.1S"
+
 DEPENDENCIES
 =
 
-There are no dependencies to use RVS_IPAddress in your project. In order to test it and run it in the module project, you should use [CocoaPods](https://cocoapods.org) to install [SwiftLint](https://cocoapods.org/pods/SwiftLint), although that is not required. It's [just good practice](https://littlegreenviper.com/series/swiftwater/swiftlint/).
+There are no dependencies to use RVS_ParseXMLDuration in your project. In order to test it and run it in the module project, you should use [CocoaPods](https://cocoapods.org) to install [SwiftLint](https://cocoapods.org/pods/SwiftLint), although that is not required. It's [just good practice](https://littlegreenviper.com/series/swiftwater/swiftlint/).
 
 LICENSE
 =
