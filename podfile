@@ -6,3 +6,7 @@ end
 target 'RVS_ParseXMLDuration' do
     shared_pods
 end
+
+target 'RVS_ParseXMLDurationTests' do
+    shared_pods
+end
