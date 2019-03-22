@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D47CDF8F22446B2800710EFF /* RVS_ParseXMLDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3306F22441B56003F9CC6 /* RVS_ParseXMLDuration.swift */; };
 		D4D3305C22441A8E003F9CC6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3305B22441A8E003F9CC6 /* main.swift */; };
 		D4D3306922441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3306822441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift */; };
 		D4D3307022441B56003F9CC6 /* RVS_ParseXMLDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3306F22441B56003F9CC6 /* RVS_ParseXMLDuration.swift */; };
@@ -103,6 +104,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4D3306B22441AB8003F9CC6 /* Build configuration list for PBXNativeTarget "RVS_ParseXMLDurationTests" */;
 			buildPhases = (
+				D47CDF902244EC9200710EFF /* SwiftLINT */,
 				D4D3306222441AB8003F9CC6 /* Sources */,
 			);
 			buildRules = (
@@ -173,6 +175,24 @@
 			shellScript = "if test -f \"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"; then\n    \"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		D47CDF902244EC9200710EFF /* SwiftLINT */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLINT;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -f \"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"; then\n    \"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -190,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4D3306922441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift in Sources */,
+				D47CDF8F22446B2800710EFF /* RVS_ParseXMLDuration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

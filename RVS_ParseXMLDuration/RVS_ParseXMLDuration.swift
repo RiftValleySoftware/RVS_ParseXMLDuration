@@ -39,7 +39,7 @@ public extension String {
         /* ############################################################## */
         /**
          */
-        func scanString(_ inString: String!, isDate: Bool = false) -> DateComponents! {
+        func scanString(_ inString: String!, isNegative: Bool = false, isDate: Bool = false) -> DateComponents! {
             var ret: DateComponents!
             
             if let parseTarget = inString {
@@ -55,54 +55,70 @@ public extension String {
                     scanner.scanCharacters(from: numbers, into: &value)
                     scanner.scanCharacters(from: separators, into: &typeIndicator)
                     
-                    if let value = value as String?, let doubleVal = Double(value) {
-                        switch typeIndicator as String? {
+                    if let value = value as String?, let doubleVal = Double(value), let typeIndicator = typeIndicator as String? {
+                        if floor(doubleVal) != doubleVal && "S" != typeIndicator {
+                            return nil
+                        }
+                        let multiplier: Double = isNegative ? -1 : 1
+                        switch typeIndicator {
                         case "Y":
-                            ret.year = Int(doubleVal)
+                            ret.year = Int(doubleVal * multiplier)
                         case "M":
-                            if isDate {
-                                ret.month = Int(doubleVal)
+                           if isDate {
+                                ret.month = Int(doubleVal * multiplier)
                             } else {
-                                ret.minute = Int(doubleVal)
+                                ret.minute = Int(doubleVal * multiplier)
                             }
                         case "D":
-                            ret.day = Int(doubleVal)
+                            ret.day = Int(doubleVal * multiplier)
                         case "H":
-                            ret.hour = Int(doubleVal)
+                            ret.hour = Int(doubleVal * multiplier)
                         case "S":
-                            ret.second = Int(doubleVal)
-                            let nanosecond = Int((doubleVal - Double(Int(doubleVal))) * 1000000000)
+                            ret.second = Int(doubleVal * multiplier)
+                            let nanosecond = (doubleVal - Double(Int(doubleVal))) * 1000000000
                             if 0 < nanosecond {
-                                ret.nanosecond = nanosecond
+                                ret.nanosecond = Int(nanosecond * multiplier)
                             }
                             
                         default:
                             break
                         }
+                    } else {
+                        return nil
                     }
                 }
             }
             
-            return ret.isValidDate ? ret : nil
+            return ret
         }
         
-        let timeDate = self.components(separatedBy: "T")
-        let dateString = "P" != timeDate[0] ? String(timeDate[0].dropFirst()) : nil
-        let timeString = ((1 < timeDate.count) && !timeDate[1].isEmpty) ? timeDate[1] : nil
+        var target = self
+        let isNegative = "-" == target.first
+        if isNegative {
+            target.removeFirst()
+        }
         
-        var returnValue = scanString(dateString)
+        let timeDate = target.uppercased().components(separatedBy: "T")
+        if 1 == timeDate.count || !(1 < timeDate.count && timeDate[1].isEmpty) {
+            let dateString = "P" != timeDate[0] ? String(timeDate[0].dropFirst()) : nil
+            let timeString = ((1 < timeDate.count) && !timeDate[1].isEmpty) ? timeDate[1] : nil
+            
+            var returnValue = scanString(dateString, isNegative: isNegative, isDate: true)
 
-        if let timeComp = scanString(timeString) {
-            if nil != returnValue {
-                returnValue?.hour = timeComp.hour
-                returnValue?.minute = timeComp.minute
-                returnValue?.second = timeComp.second
-                returnValue?.nanosecond = timeComp.nanosecond
-            } else {
-                returnValue = timeComp
+            if let timeComp = scanString(timeString, isNegative: isNegative) {
+                if nil != returnValue {
+                    returnValue?.hour = timeComp.hour
+                    returnValue?.minute = timeComp.minute
+                    returnValue?.second = timeComp.second
+                    returnValue?.nanosecond = timeComp.nanosecond
+                } else {
+                    returnValue = timeComp
+                }
             }
+            
+            return returnValue
         }
-
-        return returnValue
+        
+        return nil
     }
 }
