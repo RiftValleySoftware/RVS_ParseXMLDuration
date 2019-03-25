@@ -177,7 +177,7 @@ public extension DateComponents {
         // Now, if one is negative, they must ALL be negative. -1 is negative, 1 is positive, and -2 or 0 (no valid values) is error.
         let multiplier = componentArray.reduce(0, { (current, nextItem) -> Int in
             if -2 != current {  // Are we BORK?
-                if (nextItem < 0 && -1 == current) || (nextItem > 0 && 1 == current) {  // We assume that we are on the same page as the previous value.
+                if (nextItem < 0 && -1 == current) || (nextItem >= 0 && 1 == current) {  // We assume that we are on the same page as the previous value.
                     return current
                 } else if 0 == current {    // If this is the first valid value, then we set the agenda.
                     return nextItem < 0 ? -1 : 1
@@ -196,9 +196,11 @@ public extension DateComponents {
             let components = componentArray.map(abs)            // Remove any negative influences. Feng Shui...
             var resultString = -1 == multiplier ? "-P" : "P"    // Start your engines...
             
+            let hasTime = 0 != components[3] || 0 != components[4] || 0 != components[5] || 0 != components[6]
+            
             // The first lot are easy and straightforward.
             for index in 0..<tagArray.count {
-                if 3 == index {
+                if 3 == index && hasTime {
                     resultString += "T" // Time for time...
                 }
                 if 0 != components[index] {
@@ -208,11 +210,23 @@ public extension DateComponents {
             
             // Seconds takes a bit more work, as it could be fractional.
             if 0 != components[tagArray.count] || 0 != components[tagArray.count + 1] {
-                let value: Double = Double(components[tagArray.count]) + (Double(components[tagArray.count + 1]) / 10000000000)
-                resultString += String(value) + "S"
+                let mainValue = Int(components[tagArray.count])
+                var fractionalValue = Double(components[tagArray.count + 1]) / 10000000000
+                if 0 != fractionalValue {   // Number formatter gives us what we need.
+                    fractionalValue += Double(mainValue)
+                    let formatter = NumberFormatter()
+                    formatter.minimumIntegerDigits = 1
+                    formatter.minimumFractionDigits = 0
+                    formatter.maximumFractionDigits = 4
+                    let floatNumber = fractionalValue as NSNumber
+                    resultString += String(formatter.string(from: floatNumber) ?? "")
+                } else if 0 != mainValue {
+                    resultString += String(mainValue)
+                }
+                resultString += "S"
             }
             
-            return resultString
+            return  "P" != resultString ? resultString : nil
         }
         
         return nil

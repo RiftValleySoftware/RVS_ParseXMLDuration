@@ -76,6 +76,7 @@ class RVS_ParseXMLDurationTests: XCTestCase {
         (targetComponents: DateComponents(hour: 1), expectedResult: "PT1H"),
         (targetComponents: DateComponents(minute: 1), expectedResult: "PT1M"),
         (targetComponents: DateComponents(second: 1), expectedResult: "PT1S"),
+        (targetComponents: DateComponents(second: 60, nanosecond: 0), expectedResult: "PT60S"),
         (targetComponents: DateComponents(nanosecond: 1000000000), expectedResult: "PT0.1S"),
         (targetComponents: DateComponents(second: 1, nanosecond: 1000000000), expectedResult: "PT1.1S"),
         (targetComponents: DateComponents(year: 9999), expectedResult: "P9999Y"),
