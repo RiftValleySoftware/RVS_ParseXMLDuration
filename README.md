@@ -82,7 +82,7 @@ In order to have a negative duration, the first character must be a minus sign, 
 
 Zero (or unspecified) components are not included in the resultant String.
 
-    let durationString1 = DateComponents(year: 0, day: 1, hour: 1, minute: 0, second: 1, nanosecond: 0).asXMLDuration // "PT1H1S"
+    let durationString1 = DateComponents(year: 0, day: 1, hour: 1, minute: 0, second: 1, nanosecond: 0).asXMLDuration // "P1DT1H1S"
 
 Note that fractional seconds are expressed as seconds and nanoseconds.
 
