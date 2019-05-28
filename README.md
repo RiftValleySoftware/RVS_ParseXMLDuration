@@ -49,7 +49,7 @@ All the rest of the stuff is for testing, validating and sharing.
 A Few Rules:
 -
 
-The string is formatted as `[-]P[0-9Y][0-9M][0-9D][T[0-9H][0-9M][0-9[.0-9]S]]`
+The string is formatted as `[\-]P[|0-9|*Y][|0-9|*M][|0-9|*D][T[|0-9|*H][|0-9|*M][|0-9|*[\.|0-9|*]S]]`
 
 The first character **MUST** be a `"P"`, and any negative sign must **PRECEDE** the `"P"`.
 
