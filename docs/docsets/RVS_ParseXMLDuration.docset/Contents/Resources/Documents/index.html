@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RVS_ParseXMLDuration  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+
+    <a title="RVS_ParseXMLDuration  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          RVS_ParseXMLDuration Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/RiftValleySoftware/RVS_ParseXMLDuration">
+            <img class="header-icon" src="img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">RVS_ParseXMLDuration Reference</a>
+      <img class="carat" src="img/carat.png" />
+      RVS_ParseXMLDuration  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/DateComponents.html">DateComponents</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            
+            <p><img src="icon.png" alt="Project Icon"></p>
+<h1 id='swift-xsd-duration-parser-extensions' class='heading'>Swift xsd:duration Parser Extensions</h1>
+<h2 id='introduction' class='heading'>Introduction</h2>
+
+<p>This set of extensions allows us to easily parse duration values, as expressed in XML documents that expect their duration values to be in <a href="https://www.w3.org/TR/xmlschema11-2/#duration">the standard xsd:duration format</a>.</p>
+
+<p><a href="http://www.datypic.com/sc/xsd/t-xsd_duration.html">This page does a fairly good job of explaining the format.</a></p>
+<h2 id='what-problem-does-this-solve' class='heading'>What Problem Does This Solve?</h2>
+
+<p>The duration format has a number of ways that it can be expressed, and this set of extensions should allow us to deal with all of them. It will be most useful integrated into an XML parser.
+It will read a duration from a <a href="https://developer.apple.com/documentation/swift/string">String</a> instance, and return a <a href="https://developer.apple.com/documentation/foundation/datecomponents">DateComponents</a> instance, representing the duration in that String.
+You can also do the reverse, and take a DateComponents instance, and express it as a properly-formatted xsd:duration String.</p>
+<h2 id='requirements' class='heading'>Requirements</h2>
+
+<p>It should work fine for osx, tvOS and iOS. It only depends on the Swift Foundation library.</p>
+
+<p>This requires Swift Version 4.0 or above (tested with 4.2).</p>
+<h1 id='where-to-get' class='heading'>WHERE TO GET</h1>
+
+<p><a href="https://github.com/RiftValleySoftware/RVS_ParseXMLDuration">Here is the GitHub Repo for This Project.</a></p>
+
+<p><a href="https://riftvalleysoftware.com/work/open-source-projects/#RVS_ParseXMLDuration">Here is the online documentation page for this project.</a></p>
+<h1 id='usage' class='heading'>USAGE</h1>
+<h2 id='include-the-source-in-your-project' class='heading'>Include the Source in Your Project</h2>
+
+<p>This is a simple source file; not a module.</p>
+
+<p>To use this, simply add the <a href="https://github.com/RiftValleySoftware/RVS_ParseXMLDuration/blob/master/RVS_ParseXMLDuration/RVS_ParseXMLDuration.swift">RVS_ParseXMLDuration/RVS_ParseXMLDuration.swift</a> file to your project; copying it wherever you want.</p>
+
+<p>This will add one function: <code>asXMLDuration</code>, to the <a href="https://developer.apple.com/documentation/swift/string">String</a> struct, and to the <a href="https://developer.apple.com/documentation/foundation/datecomponents">DateComponents</a> struct.</p>
+
+<p>The String variant will return an optional DateComponents result (a parsed string), and the DateComponents variant will return an optional String (a properly-formatted xsd:duration string).</p>
+
+<p>All the rest of the stuff is for testing, validating and sharing.</p>
+<h2 id='a-few-rules' class='heading'>A Few Rules:</h2>
+
+<p>The string is formatted as <code>[\-]P[|0-9|*Y][|0-9|*M][|0-9|*D][T[|0-9|*H][|0-9|*M][|0-9|*[\.|0-9|*]S]]</code></p>
+
+<p>The first character <strong>MUST</strong> be a <code>&quot;P&quot;</code>, and any negative sign must <strong>PRECEDE</strong> the <code>&quot;P&quot;</code>.</p>
+
+<p>Any time (hours, minutes, seconds), <strong>MUST</strong> be preceded by a <code>&quot;T&quot;</code>. This either starts the time, or separates it from a date.</p>
+
+<p>For example, <code>P2Y6M5DT12H35M30S</code> is 2 years, 6 months, 5 days, 12 hours, 35 minutes and 30 seconds.</p>
+
+<p>For our purposes, when a unit is not specified, we don&rsquo;t include it at all in the DateComponents. If the unit is specified, but is a zero (0), then we specify that unit as zero in the DateComponents.</p>
+<h2 id='examples' class='heading'>Examples</h2>
+
+<p>Not much to show, really. The parser is ridiculously easy to use.</p>
+
+<p><strong>Parsing From A String:</strong></p>
+
+<p>Each part is composed of 1 or more decimal digits, immediately succeeded by <q>Y</q> (years), <q>M</q> (months or minutes), <q>D</q> (days), <q>H</q> (hours), or <q>S</q> (seconds). Seconds can be expressed as a decimal. All other numbers are integers.</p>
+<pre class="highlight plaintext"><code>let durationComponents1 = "P2Y6M5DT12H35M30.123S".asXMLDuration // DateComponents(year: 2, month: 6, day: 5, hour: 12, minute: 35, second: 30, nanosecond: 1230000000)
+</code></pre>
+
+<p>You can have more than 59 minutes or 23 hours.</p>
+<pre class="highlight plaintext"><code>let durationComponents2 = "PT168H120M".asXMLDuration            // DateComponents(hour: 168, minute: 120)
+</code></pre>
+
+<p>In order to have a negative duration, the first character must be a minus sign, and ALL components in the result will be negative.</p>
+<pre class="highlight plaintext"><code>let durationComponents3 = "-P2M4DT10M5.23S".asXMLDuration       // DateComponents(month: -2, day: -4, minute: -10, second: -5, nanosecond: -2300000000)
+</code></pre>
+
+<p><strong>Delivering A String From A DateComponents Instance:</strong></p>
+
+<p>Zero (or unspecified) components are not included in the resultant String.</p>
+<pre class="highlight plaintext"><code>let durationString1 = DateComponents(year: 0, day: 1, hour: 1, minute: 0, second: 1, nanosecond: 0).asXMLDuration // "P1DT1H1S"
+</code></pre>
+
+<p>Note that fractional seconds are expressed as seconds and nanoseconds.</p>
+<pre class="highlight plaintext"><code>let durationString2 = DateComponents(year: 1, month: 1, day: 1, hour: 1, minute: 1, second: 1, nanosecond: 1000000000).asXMLDuration // "P1Y1M1DT1H1M1.1S"
+</code></pre>
+
+<p>In order to specify a negative duration, ALL components must be negative.</p>
+<pre class="highlight plaintext"><code>let durationString3 = DateComponents(year: -1, month: -1, day: -1, hour: -1, minute: -1, second: -1, nanosecond: -1000000000).asXMLDuration // "-P1Y1M1DT1H1M1.1S"
+</code></pre>
+<h1 id='dependencies' class='heading'>DEPENDENCIES</h1>
+
+<p>There are no dependencies to use RVS_ParseXMLDuration in your project. In order to test it and run it in the module project, you should use <a href="https://cocoapods.org">CocoaPods</a> to install <a href="https://cocoapods.org/pods/SwiftLint">SwiftLint</a>, although that is not required. It&rsquo;s <a href="https://littlegreenviper.com/series/swiftwater/swiftlint/">just good practice</a>.</p>
+<h1 id='license' class='heading'>LICENSE</h1>
+
+<p>MIT License</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation
+files (the <q>Software</q>), to deal in the Software without restriction, including without limitation the rights to use, copy,
+modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED <q>AS IS</q>, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+<p><a href="https://riftvalleysoftware.com">The Great Rift Valley Software Company: https://riftvalleysoftware.com</a></p>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class="footer">
+      <p><a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external">©2019 The Great Rift Valley Software Company</a></p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
