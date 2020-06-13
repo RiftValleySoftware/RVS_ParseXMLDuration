@@ -11,7 +11,6 @@ opt_in_rules:
 - comma
 
 excluded:
-- Pods
 - RVS_IPAddress_Tests
 - Test-Playground.playground
 - docs

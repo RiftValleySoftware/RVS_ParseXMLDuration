@@ -2,30 +2,21 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:.swiftlint.yml">
-   </FileRef>
-   <FileRef
       location = "group:CHANGELOG.md">
    </FileRef>
    <FileRef
       location = "group:jazzy.sh">
    </FileRef>
    <FileRef
-      location = "group:LICENSE.txt">
-   </FileRef>
-   <FileRef
-      location = "group:Package.swift">
-   </FileRef>
-   <FileRef
-      location = "group:podfile">
-   </FileRef>
-   <FileRef
       location = "group:README.md">
    </FileRef>
    <FileRef
-      location = "group:RVS_ParseXMLDuration.xcodeproj">
+      location = "group:LICENSE">
    </FileRef>
    <FileRef
-      location = "group:Pods/Pods.xcodeproj">
+      location = "group:.swiftlint.yml">
+   </FileRef>
+   <FileRef
+      location = "group:RVS_ParseXMLDuration.xcodeproj">
    </FileRef>
 </Workspace>

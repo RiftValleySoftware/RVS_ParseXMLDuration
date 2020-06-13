@@ -14,43 +14,31 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1EC7CE2368886500040D8DAC /* Pods-RVS_ParseXMLDuration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVS_ParseXMLDuration.debug.xcconfig"; path = "Target Support Files/Pods-RVS_ParseXMLDuration/Pods-RVS_ParseXMLDuration.debug.xcconfig"; sourceTree = "<group>"; };
-		7B3CF3A9CB113894AE262935 /* Pods_RVS_ParseXMLDuration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RVS_ParseXMLDuration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D40668B2249567C400A092BE /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
 		D4D3305822441A8E003F9CC6 /* RVS_ParseXMLDuration */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RVS_ParseXMLDuration; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4D3305B22441A8E003F9CC6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D4D3306622441AB8003F9CC6 /* RVS_ParseXMLDurationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVS_ParseXMLDurationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4D3306822441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_ParseXMLDurationTests.swift; sourceTree = "<group>"; };
 		D4D3306A22441AB8003F9CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4D3306F22441B56003F9CC6 /* RVS_ParseXMLDuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_ParseXMLDuration.swift; sourceTree = "<group>"; };
-		FBDBF1D91C3F6F180ADAAB05 /* Pods-RVS_ParseXMLDuration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVS_ParseXMLDuration.release.xcconfig"; path = "Target Support Files/Pods-RVS_ParseXMLDuration/Pods-RVS_ParseXMLDuration.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		3C6E0319F844F8F43FF4E65C /* Frameworks */ = {
+		D40668B1249567B700A092BE /* meta */ = {
 			isa = PBXGroup;
 			children = (
-				7B3CF3A9CB113894AE262935 /* Pods_RVS_ParseXMLDuration.framework */,
+				D40668B2249567C400A092BE /* Warnings.xcconfig */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		809A0D8B3A0758B50AD3DCE6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1EC7CE2368886500040D8DAC /* Pods-RVS_ParseXMLDuration.debug.xcconfig */,
-				FBDBF1D91C3F6F180ADAAB05 /* Pods-RVS_ParseXMLDuration.release.xcconfig */,
-			);
-			path = Pods;
+			name = meta;
 			sourceTree = "<group>";
 		};
 		D4D3304F22441A8E003F9CC6 = {
 			isa = PBXGroup;
 			children = (
-				D4D3305A22441A8E003F9CC6 /* RVS_ParseXMLDuration */,
-				D4D3306722441AB8003F9CC6 /* RVS_ParseXMLDurationTests */,
+				D40668B1249567B700A092BE /* meta */,
+				D4D3305A22441A8E003F9CC6 /* src */,
+				D4D3306722441AB8003F9CC6 /* test */,
 				D4D3305922441A8E003F9CC6 /* Products */,
-				809A0D8B3A0758B50AD3DCE6 /* Pods */,
-				3C6E0319F844F8F43FF4E65C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,22 +51,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D4D3305A22441A8E003F9CC6 /* RVS_ParseXMLDuration */ = {
+		D4D3305A22441A8E003F9CC6 /* src */ = {
 			isa = PBXGroup;
 			children = (
 				D4D3305B22441A8E003F9CC6 /* main.swift */,
 				D4D3306F22441B56003F9CC6 /* RVS_ParseXMLDuration.swift */,
 			);
-			path = RVS_ParseXMLDuration;
+			path = src;
 			sourceTree = "<group>";
 		};
-		D4D3306722441AB8003F9CC6 /* RVS_ParseXMLDurationTests */ = {
+		D4D3306722441AB8003F9CC6 /* test */ = {
 			isa = PBXGroup;
 			children = (
 				D4D3306822441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift */,
 				D4D3306A22441AB8003F9CC6 /* Info.plist */,
 			);
-			path = RVS_ParseXMLDurationTests;
+			path = test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +111,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "The Great Rift Valley Software Company";
 				TargetAttributes = {
 					D4D3305722441A8E003F9CC6 = {
@@ -175,7 +163,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if test -f \"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"; then\n    \"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"\nfi\n";
+			shellScript = "if test -f \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"; then\n    \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D47CDF902244EC9200710EFF /* SwiftLINT */ = {
@@ -222,6 +210,7 @@
 /* Begin XCBuildConfiguration section */
 		D4D3305D22441A8E003F9CC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D40668B2249567C400A092BE /* Warnings.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -286,6 +275,7 @@
 		};
 		D4D3305E22441A8E003F9CC6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D40668B2249567C400A092BE /* Warnings.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -343,13 +333,13 @@
 		};
 		D4D3306022441A8E003F9CC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1EC7CE2368886500040D8DAC /* Pods-RVS_ParseXMLDuration.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = "$(SRCROOT)/RVS_ParseXMLDurationTests/Info.plist";
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -358,13 +348,13 @@
 		};
 		D4D3306122441A8E003F9CC6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FBDBF1D91C3F6F180ADAAB05 /* Pods-RVS_ParseXMLDuration.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = "$(SRCROOT)/RVS_ParseXMLDurationTests/Info.plist";
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -378,7 +368,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = RVS_ParseXMLDurationTests/Info.plist;
+				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -399,7 +389,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = RVS_ParseXMLDurationTests/Info.plist;
+				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
