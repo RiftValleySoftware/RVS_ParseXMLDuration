@@ -14,6 +14,9 @@
       location = "group:LICENSE">
    </FileRef>
    <FileRef
+      location = "group:Package.swift">
+   </FileRef>
+   <FileRef
       location = "group:.swiftlint.yml">
    </FileRef>
    <FileRef

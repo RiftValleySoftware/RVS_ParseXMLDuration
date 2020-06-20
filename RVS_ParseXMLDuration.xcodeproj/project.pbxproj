@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D47CDF8F22446B2800710EFF /* RVS_ParseXMLDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3306F22441B56003F9CC6 /* RVS_ParseXMLDuration.swift */; };
-		D4D3305C22441A8E003F9CC6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3305B22441A8E003F9CC6 /* main.swift */; };
 		D4D3306922441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3306822441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift */; };
 		D4D3307022441B56003F9CC6 /* RVS_ParseXMLDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3306F22441B56003F9CC6 /* RVS_ParseXMLDuration.swift */; };
+		D4D41B6C249E4283000F4E78 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3305B22441A8E003F9CC6 /* main.swift */; };
+		D4D41B6D249E4285000F4E78 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3305B22441A8E003F9CC6 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +55,6 @@
 		D4D3305A22441A8E003F9CC6 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				D4D3305B22441A8E003F9CC6 /* main.swift */,
 				D4D3306F22441B56003F9CC6 /* RVS_ParseXMLDuration.swift */,
 			);
 			path = src;
@@ -63,6 +63,7 @@
 		D4D3306722441AB8003F9CC6 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				D4D3305B22441A8E003F9CC6 /* main.swift */,
 				D4D3306822441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift */,
 				D4D3306A22441AB8003F9CC6 /* Info.plist */,
 			);
@@ -191,7 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4D3305C22441A8E003F9CC6 /* main.swift in Sources */,
+				D4D41B6D249E4285000F4E78 /* main.swift in Sources */,
 				D4D3307022441B56003F9CC6 /* RVS_ParseXMLDuration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +203,7 @@
 			files = (
 				D4D3306922441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift in Sources */,
 				D47CDF8F22446B2800710EFF /* RVS_ParseXMLDuration.swift in Sources */,
+				D4D41B6C249E4283000F4E78 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
