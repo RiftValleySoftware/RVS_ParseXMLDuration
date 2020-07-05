@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DateComponents Extension Reference</title>
+    <title>String Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,14 +14,14 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Extension/DateComponents" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Extension/String" class="dashAnchor"></a>
 
-    <a title="DateComponents Extension Reference"></a>
+    <a title="String Extension Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          RVS_ParseXMLDurationTests Docs
+          RVS_ParseXMLDuration Docs
         </a>
          (100% documented)
       </p>
@@ -42,9 +42,9 @@
     </header>
 
     <p class="breadcrumbs">
-      <a class="breadcrumb" href="../index.html">RVS_ParseXMLDurationTests Reference</a>
+      <a class="breadcrumb" href="../index.html">RVS_ParseXMLDuration Reference</a>
       <img class="carat" src="../img/carat.png" />
-      DateComponents Extension Reference
+      String Extension Reference
     </p>
 
     <div class="content-wrapper">
@@ -66,17 +66,19 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
-            <h1>DateComponents</h1>
+          <div class="section-content top-matter">
+            <h1>String</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">DateComponents</span> <span class="p">:</span> <span class="kt">ReferenceConvertible</span><span class="p">,</span> <span class="kt">Hashable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="n">_MutableBoxing</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">String</span></code></pre>
 
                 </div>
               </div>
-            <p>This extension provides the reverse of asXMLDuration.</p>
+            <p>This extension adds the capability to parse a String as an xs:duration (XML duration), returning the duration as a DateComponents Set.</p>
 
-<p>You can have an instance of DateComponents express itself as a legal, optimized xs:duration String.</p>
+<p>The definition for duration is here: <a href="https://www.w3.org/TR/xmlschema11-2/#duration">https://www.w3.org/TR/xmlschema11-2/#duration</a></p>
+
+<p>A more readable breakdown is here: <a href="http://www.datypic.com/sc/xsd/t-xsd_duration.html">http://www.datypic.com/sc/xsd/t-xsd_duration.html</a></p>
 
           </div>
         </section>
@@ -88,9 +90,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10Foundation14DateComponentsV25RVS_ParseXMLDurationTestsE02asF0SSSgvp"></a>
+                    <a name="/s:SS20RVS_ParseXMLDurationE02asC010Foundation14DateComponentsVSgvp"></a>
                     <a name="//apple_ref/swift/Property/asXMLDuration" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10Foundation14DateComponentsV25RVS_ParseXMLDurationTestsE02asF0SSSgvp">asXMLDuration</a>
+                    <a class="token" href="#/s:SS20RVS_ParseXMLDurationE02asC010Foundation14DateComponentsVSgvp">asXMLDuration</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -98,20 +100,22 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This calculated property will return a properly-formatted xsd:duration String, based upon the current state of this DateComponents instance.</p>
+                        <p>This calculated property will examine the String, and will parse it for xsd:duration.</p>
+
+<p>If it can successfully parse the String as a properly-formatted duration, then it will return a DateComponents instance, with the duration therein.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">asXMLDuration</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">asXMLDuration</span><span class="p">:</span> <span class="kt">DateComponents</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A String, if the parse was successful. Nil, if not.</p>
+                        <p>An instance of DateComponents, set to the duration. Nil, if the parse failed for any reason.</p>
                       </div>
                     </section>
                   </div>
@@ -125,7 +129,7 @@
     </div>
     <section class="footer">
       <p><a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external">©2019 The Great Rift Valley Software Company</a></p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

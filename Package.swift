@@ -13,7 +13,6 @@ let package = Package(
     products: [
         .library(
             name: "RVS-ParseXMLDuration",
-            type: .dynamic,
             targets: ["RVS_ParseXMLDuration"])
     ],
     targets: [

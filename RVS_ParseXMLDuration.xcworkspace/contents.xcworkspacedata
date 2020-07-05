@@ -5,7 +5,7 @@
       location = "group:CHANGELOG.md">
    </FileRef>
    <FileRef
-      location = "group:jazzy.sh">
+      location = "group:/Volumes/Development/RiftValley/RVS_ParseXMLDuration/jazzy.command">
    </FileRef>
    <FileRef
       location = "group:README.md">
