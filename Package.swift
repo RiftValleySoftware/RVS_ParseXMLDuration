@@ -16,8 +16,8 @@ let package = Package(
             targets: ["RVS_ParseXMLDuration"])
     ],
     targets: [
-        .target(
-            name: "RVS_ParseXMLDuration",
-            path: "./src")
+        .target(name: "RVS_ParseXMLDuration"),
+        .testTarget(name: "RVS_ParseXMLDurationTests",
+                    dependencies: ["RVS_ParseXMLDuration"])
     ]
 )

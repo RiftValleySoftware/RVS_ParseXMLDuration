@@ -11,9 +11,10 @@ opt_in_rules:
 - comma
 
 excluded:
-- RVS_IPAddress_Tests
-- Test-Playground.playground
+- Tests
 - docs
+- spec
+- Project-Meta
 
 file_length:
 - 1000 # warning

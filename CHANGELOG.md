@@ -1,3 +1,7 @@
+*Version 1.2.1.0000* **August 1, 2020**
+
+- Rearranged for GitHub Swift Action.
+
 *Version 1.2.0.0000* **July 5, 2020**
 
 - Made SPM product  a static lib.

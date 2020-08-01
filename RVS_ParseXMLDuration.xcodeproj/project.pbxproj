@@ -10,7 +10,6 @@
 		D47CDF8F22446B2800710EFF /* RVS_ParseXMLDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3306F22441B56003F9CC6 /* RVS_ParseXMLDuration.swift */; };
 		D4D3306922441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3306822441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift */; };
 		D4D3307022441B56003F9CC6 /* RVS_ParseXMLDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3306F22441B56003F9CC6 /* RVS_ParseXMLDuration.swift */; };
-		D4D41B6C249E4283000F4E78 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3305B22441A8E003F9CC6 /* main.swift */; };
 		D4D41B6D249E4285000F4E78 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3305B22441A8E003F9CC6 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,12 +32,30 @@
 			name = meta;
 			sourceTree = "<group>";
 		};
+		D4B23B5E24D59AC300CA7AD8 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D4D3305A22441A8E003F9CC6 /* RVS_ParseXMLDuration */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		D4B23B5F24D59ACE00CA7AD8 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D4D3305B22441A8E003F9CC6 /* main.swift */,
+				D4D3306A22441AB8003F9CC6 /* Info.plist */,
+				D4D3306722441AB8003F9CC6 /* RVS_ParseXMLDurationTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		D4D3304F22441A8E003F9CC6 = {
 			isa = PBXGroup;
 			children = (
+				D4B23B5F24D59ACE00CA7AD8 /* Tests */,
+				D4B23B5E24D59AC300CA7AD8 /* Sources */,
 				D40668B1249567B700A092BE /* meta */,
-				D4D3305A22441A8E003F9CC6 /* src */,
-				D4D3306722441AB8003F9CC6 /* test */,
 				D4D3305922441A8E003F9CC6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,22 +69,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D4D3305A22441A8E003F9CC6 /* src */ = {
+		D4D3305A22441A8E003F9CC6 /* RVS_ParseXMLDuration */ = {
 			isa = PBXGroup;
 			children = (
 				D4D3306F22441B56003F9CC6 /* RVS_ParseXMLDuration.swift */,
 			);
-			path = src;
+			path = RVS_ParseXMLDuration;
 			sourceTree = "<group>";
 		};
-		D4D3306722441AB8003F9CC6 /* test */ = {
+		D4D3306722441AB8003F9CC6 /* RVS_ParseXMLDurationTests */ = {
 			isa = PBXGroup;
 			children = (
-				D4D3305B22441A8E003F9CC6 /* main.swift */,
 				D4D3306822441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift */,
-				D4D3306A22441AB8003F9CC6 /* Info.plist */,
 			);
-			path = test;
+			path = RVS_ParseXMLDurationTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,7 +108,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4D3306B22441AB8003F9CC6 /* Build configuration list for PBXNativeTarget "RVS_ParseXMLDurationTests" */;
 			buildPhases = (
-				D47CDF902244EC9200710EFF /* SwiftLINT */,
 				D4D3306222441AB8003F9CC6 /* Sources */,
 			);
 			buildRules = (
@@ -112,7 +126,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "The Great Rift Valley Software Company";
 				TargetAttributes = {
 					D4D3305722441A8E003F9CC6 = {
@@ -167,24 +181,6 @@
 			shellScript = "if test -f \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"; then\n    \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		D47CDF902244EC9200710EFF /* SwiftLINT */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLINT;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if test -f \"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"; then\n    \"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"\nfi\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -203,7 +199,6 @@
 			files = (
 				D4D3306922441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift in Sources */,
 				D47CDF8F22446B2800710EFF /* RVS_ParseXMLDuration.swift in Sources */,
-				D4D41B6C249E4283000F4E78 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +365,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = test/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -391,7 +386,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = test/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
