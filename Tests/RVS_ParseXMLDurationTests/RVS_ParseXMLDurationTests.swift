@@ -17,13 +17,12 @@
  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   
- Version: 1.2.1
+ Version: 1.2.2
 
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  */
 
 import XCTest
-@testable import RVS_ParseXMLDuration
 
 class RVS_ParseXMLDurationTests: XCTestCase {
     typealias FromStringTestTuple = (targetString: String, expectedResult: DateComponents?)

@@ -1,3 +1,8 @@
+*Version 1.2.2.0000* **July 13, 2021**
+
+- Added code coverage to the tests.
+- Updated to the latest tools.
+
 *Version 1.2.1.0000* **August 1, 2020**
 
 - Rearranged for GitHub Swift Action.
