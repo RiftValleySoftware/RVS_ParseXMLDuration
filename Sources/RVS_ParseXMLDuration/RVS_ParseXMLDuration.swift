@@ -17,7 +17,7 @@
  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   
- Version: 1.2.2
+ Version: 1.2.3
 
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  */
@@ -61,11 +61,8 @@ public extension String {
                 let scanner = Scanner(string: parseTarget)  // Set up a scanner, with the string supplied.
                 scanner.charactersToBeSkipped = numbers.union(valueIndicators).inverted  // Ignore everything but what we give you.
                 while !scanner.isAtEnd {            // Keep going until the end.
-                    var value: NSString?            // The numerical value that will be scanned. We use NSString for the scanner.
-                    var typeIndicator: NSString?    // This is the value indicator.
-                    
-                    scanner.scanCharacters(from: numbers, into: &value)                 // Grab the numerical part first.
-                    scanner.scanCharacters(from: valueIndicators, into: &typeIndicator) // Followed by the value indicator.
+                    let value = scanner.scanCharacters(from: numbers)
+                    let typeIndicator = scanner.scanCharacters(from: valueIndicators)
                     
                     // Quick validation and unwrapping.
                     if let value = value as String?, let doubleVal = Double(value), let typeIndicator = typeIndicator as String? {
