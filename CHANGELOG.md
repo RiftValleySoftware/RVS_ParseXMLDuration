@@ -1,3 +1,7 @@
+*Version 1.2.4.0000* **December 14, 2021**
+
+- Updated to the latest tools.
+
 *Version 1.2.3.0000* **September 33, 2021**
 
 - Updated to the latest tools.
