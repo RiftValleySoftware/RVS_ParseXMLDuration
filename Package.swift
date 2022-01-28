@@ -5,8 +5,8 @@ import PackageDescription
 let package = Package(
     name: "RVS_ParseXMLDuration",
     platforms: [
-        .iOS(.v11),
-        .tvOS(.v11),
+        .iOS(.v13),
+        .tvOS(.v13),
         .macOS(.v10_14),
         .watchOS(.v5)
     ],
@@ -17,7 +17,8 @@ let package = Package(
     ],
     targets: [
         .target(name: "RVS_ParseXMLDuration"),
-        .testTarget(name: "RVS_ParseXMLDurationTests",
-                    dependencies: ["RVS_ParseXMLDuration"])
+        .testTarget(name: "RVS-ParseXMLDurationTests",
+                    dependencies: ["RVS_ParseXMLDuration"],
+                    path: "Tests/RVS_ParseXMLDurationTests")
     ]
 )

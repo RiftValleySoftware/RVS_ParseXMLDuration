@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D406622427A435540067C0C2 /* RVS_ParseXMLDuration.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = RVS_ParseXMLDuration.docc; sourceTree = "<group>"; };
 		D40668B2249567C400A092BE /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
 		D4D3305822441A8E003F9CC6 /* RVS_ParseXMLDuration */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RVS_ParseXMLDuration; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4D3305B22441A8E003F9CC6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				D4D3306F22441B56003F9CC6 /* RVS_ParseXMLDuration.swift */,
+				D406622427A435540067C0C2 /* RVS_ParseXMLDuration.docc */,
 			);
 			path = RVS_ParseXMLDuration;
 			sourceTree = "<group>";
@@ -100,6 +102,9 @@
 			dependencies = (
 			);
 			name = RVS_ParseXMLDuration;
+			packageProductDependencies = (
+				D45639A427A438E9004C66F0 /* RVS-ParseXMLDuration */,
+			);
 			productName = RVS_ParseXMLDuration;
 			productReference = D4D3305822441A8E003F9CC6 /* RVS_ParseXMLDuration */;
 			productType = "com.apple.product-type.tool";
@@ -148,6 +153,9 @@
 				Base,
 			);
 			mainGroup = D4D3304F22441A8E003F9CC6;
+			packageReferences = (
+				D45639A327A438E9004C66F0 /* XCRemoteSwiftPackageReference "RVS_ParseXMLDuration" */,
+			);
 			productRefGroup = D4D3305922441A8E003F9CC6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -340,7 +348,7 @@
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
-				MARKETING_VERSION = 1.2.4;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -357,7 +365,7 @@
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
-				MARKETING_VERSION = 1.2.4;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -437,6 +445,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D45639A327A438E9004C66F0 /* XCRemoteSwiftPackageReference "RVS_ParseXMLDuration" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:RiftValleySoftware/RVS_ParseXMLDuration.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D45639A427A438E9004C66F0 /* RVS-ParseXMLDuration */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D45639A327A438E9004C66F0 /* XCRemoteSwiftPackageReference "RVS_ParseXMLDuration" */;
+			productName = "RVS-ParseXMLDuration";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D4D3305022441A8E003F9CC6 /* Project object */;
 }
