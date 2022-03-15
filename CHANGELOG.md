@@ -1,3 +1,7 @@
+*Version 1.2.7* **March 15, 2022**
+
+- Updated the tools. No API or operational changes.
+
 *Version 1.2.6* **January 28, 2022**
 
 - Added DocC support. No functional or API changes.
