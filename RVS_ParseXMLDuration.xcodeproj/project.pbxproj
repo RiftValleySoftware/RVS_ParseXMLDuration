@@ -3,26 +3,53 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D47CDF8F22446B2800710EFF /* RVS_ParseXMLDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3306F22441B56003F9CC6 /* RVS_ParseXMLDuration.swift */; };
-		D4D3306922441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3306822441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift */; };
-		D4D3307022441B56003F9CC6 /* RVS_ParseXMLDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3306F22441B56003F9CC6 /* RVS_ParseXMLDuration.swift */; };
-		D4D41B6D249E4285000F4E78 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3305B22441A8E003F9CC6 /* main.swift */; };
+		D42EAA7C2885E0B7009CA9BF /* libRVS_ParseXMLDuration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D42EAA6B2885E09D009CA9BF /* libRVS_ParseXMLDuration.a */; };
+		D42EAA822885E0DC009CA9BF /* RVS_ParseXMLDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3306F22441B56003F9CC6 /* RVS_ParseXMLDuration.swift */; };
+		D42EAA832885E0E0009CA9BF /* RVS_ParseXMLDurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D3306822441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D42EAA7D2885E0B7009CA9BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4D3305022441A8E003F9CC6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D42EAA6A2885E09D009CA9BF;
+			remoteInfo = RVS_ParseXMLDuration;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D406622427A435540067C0C2 /* RVS_ParseXMLDuration.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = RVS_ParseXMLDuration.docc; sourceTree = "<group>"; };
 		D40668B2249567C400A092BE /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
-		D4D3305822441A8E003F9CC6 /* RVS_ParseXMLDuration */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RVS_ParseXMLDuration; sourceTree = BUILT_PRODUCTS_DIR; };
+		D42EAA6B2885E09D009CA9BF /* libRVS_ParseXMLDuration.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRVS_ParseXMLDuration.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D42EAA782885E0B7009CA9BF /* RVS_ParseXMLDurationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVS_ParseXMLDurationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4D3305B22441A8E003F9CC6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		D4D3306622441AB8003F9CC6 /* RVS_ParseXMLDurationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVS_ParseXMLDurationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4D3306822441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_ParseXMLDurationTests.swift; sourceTree = "<group>"; };
 		D4D3306A22441AB8003F9CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4D3306F22441B56003F9CC6 /* RVS_ParseXMLDuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_ParseXMLDuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D42EAA692885E09D009CA9BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D42EAA752885E0B7009CA9BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D42EAA7C2885E0B7009CA9BF /* libRVS_ParseXMLDuration.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		D40668B1249567B700A092BE /* meta */ = {
@@ -64,8 +91,8 @@
 		D4D3305922441A8E003F9CC6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D4D3305822441A8E003F9CC6 /* RVS_ParseXMLDuration */,
-				D4D3306622441AB8003F9CC6 /* RVS_ParseXMLDurationTests.xctest */,
+				D42EAA6B2885E09D009CA9BF /* libRVS_ParseXMLDuration.a */,
+				D42EAA782885E0B7009CA9BF /* RVS_ParseXMLDurationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,39 +116,50 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		D42EAA672885E09D009CA9BF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		D4D3305722441A8E003F9CC6 /* RVS_ParseXMLDuration */ = {
+		D42EAA6A2885E09D009CA9BF /* RVS_ParseXMLDuration */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D4D3305F22441A8E003F9CC6 /* Build configuration list for PBXNativeTarget "RVS_ParseXMLDuration" */;
+			buildConfigurationList = D42EAA712885E09D009CA9BF /* Build configuration list for PBXNativeTarget "RVS_ParseXMLDuration" */;
 			buildPhases = (
-				75CA9AAF1BB1F3E7C1E43CE6 /* SwiftLINT */,
-				D4D3305422441A8E003F9CC6 /* Sources */,
+				D42EAA672885E09D009CA9BF /* Headers */,
+				D42EAA682885E09D009CA9BF /* Sources */,
+				D42EAA692885E09D009CA9BF /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = RVS_ParseXMLDuration;
-			packageProductDependencies = (
-				D45639A427A438E9004C66F0 /* RVS-ParseXMLDuration */,
-			);
 			productName = RVS_ParseXMLDuration;
-			productReference = D4D3305822441A8E003F9CC6 /* RVS_ParseXMLDuration */;
-			productType = "com.apple.product-type.tool";
+			productReference = D42EAA6B2885E09D009CA9BF /* libRVS_ParseXMLDuration.a */;
+			productType = "com.apple.product-type.library.static";
 		};
-		D4D3306522441AB8003F9CC6 /* RVS_ParseXMLDurationTests */ = {
+		D42EAA772885E0B7009CA9BF /* RVS_ParseXMLDurationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D4D3306B22441AB8003F9CC6 /* Build configuration list for PBXNativeTarget "RVS_ParseXMLDurationTests" */;
+			buildConfigurationList = D42EAA7F2885E0B7009CA9BF /* Build configuration list for PBXNativeTarget "RVS_ParseXMLDurationTests" */;
 			buildPhases = (
-				D4D3306222441AB8003F9CC6 /* Sources */,
+				D42EAA742885E0B7009CA9BF /* Sources */,
+				D42EAA752885E0B7009CA9BF /* Frameworks */,
+				D42EAA762885E0B7009CA9BF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D42EAA7E2885E0B7009CA9BF /* PBXTargetDependency */,
 			);
 			name = RVS_ParseXMLDurationTests;
 			productName = RVS_ParseXMLDurationTests;
-			productReference = D4D3306622441AB8003F9CC6 /* RVS_ParseXMLDurationTests.xctest */;
+			productReference = D42EAA782885E0B7009CA9BF /* RVS_ParseXMLDurationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -130,22 +168,20 @@
 		D4D3305022441A8E003F9CC6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1330;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "The Great Rift Valley Software Company";
 				TargetAttributes = {
-					D4D3305722441A8E003F9CC6 = {
-						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1020;
+					D42EAA6A2885E09D009CA9BF = {
+						CreatedOnToolsVersion = 13.4.1;
 					};
-					D4D3306522441AB8003F9CC6 = {
-						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1020;
+					D42EAA772885E0B7009CA9BF = {
+						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
 			};
 			buildConfigurationList = D4D3305322441A8E003F9CC6 /* Build configuration list for PBXProject "RVS_ParseXMLDuration" */;
-			compatibilityVersion = "Xcode 10.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -154,65 +190,119 @@
 			);
 			mainGroup = D4D3304F22441A8E003F9CC6;
 			packageReferences = (
-				D45639A327A438E9004C66F0 /* XCRemoteSwiftPackageReference "RVS_ParseXMLDuration" */,
 			);
 			productRefGroup = D4D3305922441A8E003F9CC6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D4D3305722441A8E003F9CC6 /* RVS_ParseXMLDuration */,
-				D4D3306522441AB8003F9CC6 /* RVS_ParseXMLDurationTests */,
+				D42EAA6A2885E09D009CA9BF /* RVS_ParseXMLDuration */,
+				D42EAA772885E0B7009CA9BF /* RVS_ParseXMLDurationTests */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		75CA9AAF1BB1F3E7C1E43CE6 /* SwiftLINT */ = {
-			isa = PBXShellScriptBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		D42EAA762885E0B7009CA9BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = SwiftLINT;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RVS_ParseXMLDuration-checkManifestLockResult.txt",
-			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if test -f \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"; then\n    \"${PROJECT_DIR}/Project-Meta/SwiftLint/swiftlint\"\nfi\n";
-			showEnvVarsInLog = 0;
 		};
-/* End PBXShellScriptBuildPhase section */
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D4D3305422441A8E003F9CC6 /* Sources */ = {
+		D42EAA682885E09D009CA9BF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4D41B6D249E4285000F4E78 /* main.swift in Sources */,
-				D4D3307022441B56003F9CC6 /* RVS_ParseXMLDuration.swift in Sources */,
+				D42EAA822885E0DC009CA9BF /* RVS_ParseXMLDuration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D4D3306222441AB8003F9CC6 /* Sources */ = {
+		D42EAA742885E0B7009CA9BF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4D3306922441AB8003F9CC6 /* RVS_ParseXMLDurationTests.swift in Sources */,
-				D47CDF8F22446B2800710EFF /* RVS_ParseXMLDuration.swift in Sources */,
+				D42EAA832885E0E0009CA9BF /* RVS_ParseXMLDurationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D42EAA7E2885E0B7009CA9BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D42EAA6A2885E09D009CA9BF /* RVS_ParseXMLDuration */;
+			targetProxy = D42EAA7D2885E0B7009CA9BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		D42EAA722885E09D009CA9BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D42EAA732885E09D009CA9BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D42EAA802885E0B7009CA9BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-ParseXMLDurationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D42EAA812885E0B7009CA9BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-ParseXMLDurationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		D4D3305D22441A8E003F9CC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D40668B2249567C400A092BE /* Warnings.xcconfig */;
@@ -338,85 +428,27 @@
 			};
 			name = Release;
 		};
-		D4D3306022441A8E003F9CC6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
-				MARKETING_VERSION = 1.2.7;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		D4D3306122441A8E003F9CC6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
-				MARKETING_VERSION = 1.2.7;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		D4D3306C22441AB8003F9CC6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-					"@executable_path/Frameworks",
-				);
-				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-ParseXMLDurationTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		D4D3306D22441AB8003F9CC6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-					"@executable_path/Frameworks",
-				);
-				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-ParseXMLDurationTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D42EAA712885E09D009CA9BF /* Build configuration list for PBXNativeTarget "RVS_ParseXMLDuration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D42EAA722885E09D009CA9BF /* Debug */,
+				D42EAA732885E09D009CA9BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D42EAA7F2885E0B7009CA9BF /* Build configuration list for PBXNativeTarget "RVS_ParseXMLDurationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D42EAA802885E0B7009CA9BF /* Debug */,
+				D42EAA812885E0B7009CA9BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D4D3305322441A8E003F9CC6 /* Build configuration list for PBXProject "RVS_ParseXMLDuration" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -426,44 +458,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D4D3305F22441A8E003F9CC6 /* Build configuration list for PBXNativeTarget "RVS_ParseXMLDuration" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D4D3306022441A8E003F9CC6 /* Debug */,
-				D4D3306122441A8E003F9CC6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D4D3306B22441AB8003F9CC6 /* Build configuration list for PBXNativeTarget "RVS_ParseXMLDurationTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D4D3306C22441AB8003F9CC6 /* Debug */,
-				D4D3306D22441AB8003F9CC6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		D45639A327A438E9004C66F0 /* XCRemoteSwiftPackageReference "RVS_ParseXMLDuration" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:RiftValleySoftware/RVS_ParseXMLDuration.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		D45639A427A438E9004C66F0 /* RVS-ParseXMLDuration */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D45639A327A438E9004C66F0 /* XCRemoteSwiftPackageReference "RVS_ParseXMLDuration" */;
-			productName = "RVS-ParseXMLDuration";
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D4D3305022441A8E003F9CC6 /* Project object */;
 }
